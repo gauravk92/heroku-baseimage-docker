@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.22
+FROM phusion/baseimage:0.10.0
 
 ENV INSTALL_PATH /app
 
@@ -20,5 +20,6 @@ exec /usr/bin/python -m SimpleHTTPServer \044PORT\n\
 " > /etc/service/server/run
 RUN chmod +x /etc/service/server/run
 
+RUN touch /etc/service/cron/down && chmod +x /etc/service/cron/down
 
 COPY . /app
